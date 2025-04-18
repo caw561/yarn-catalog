@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Yarn-Catalog</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  </head>
+  <body>
+    <div class="background-tinting">
+    <div class="title"><h1>Christine's Yarn Stash</h1></div>
+    <section class="wrapper">
+        <aside class="sidebar">
+            <p>Search: </p>
+            <p>Filters: </p>
+            <select id="colorFilter" class="filters">
+                <option value="all">Color (All)</option>
+                <option value="Red">Red</option>
+                <option value="Orange">Orange</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Purple">Purple</option>
+                <option value="Pink">Pink</option>
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Gray">Gray</option>
+            </select>
+
+            <select id="brandFilter" class="filters">
+                <option value="all">Brand (All)</option>
+                <option value="Caron">Caron</option>
+                <option value="Big Twist">Big Twist</option>
+                <option value="Darn Goood Yarn">Darn Good Yarn</option>
+                <option value="Lion Brand">Lion Brand</option>
+                <option value="Loops & Threads">Loops & Threads</option>
+                <option value="Patons">Patons</option>
+            </select>
+
+            <select id="weightFilter" class="filters">
+                <option value="all">Weight (All)</option>
+                <option value=0>0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+            </select>
+
+            <select id="materialFilter" class="filters">
+                <option value="all">Material (All)</option>
+                <option value="Acrylic">Acrylic</option>
+                <option value="Cotton">Cotton</option>
+                <option value="Polyester">Polyester</option>
+                <option value="Silk">Silk</option>
+                <option value="Wool">Wool</option>
+            </select>
+
+            <p>Sort: </p>
+        </aside>
+
+        <div class="yarn-grid"></div>
+    </section>
+
+    <!-- Modal Background Overlay -->
+    <div id="modalOverlay"></div>
+
+    <!-- Modal Container -->
+    <div id="yarnModal">
+        <button class="close-button">&times;</button>
+        <div id="modalDetails"></div>
+    </div>
+    </div>
+
+    <!-- Use async for scripts that don’t depend on other scripts or the DOM  -->
+    <!-- Use defer for scripts that rely on the DOM or should execute in order -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
