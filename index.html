@@ -13,13 +13,16 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.1.0/fuse.min.js"></script>
   </head>
   <body>
     <div class="background-tinting">
-    <div class="title"><h1>Christine's Yarn Stash</h1></div>
+    <div class="title"><img src="yarn-images/text-1747075707043.png" alt="Christine's Yarn Stash"></div>
+    <div class="AddButtonWrapper"><button id="addYarnButton">Add Yarn</button></div>
     <section class="wrapper">
         <aside class="sidebar">
-            <p>Search: </p>
+            <p>Search:</p>
+            <input type="text" id="searchInput" placeholder="Search..." />
             <p>Filters: </p>
             <select id="colorFilter" class="filters">
                 <option value="all">Color (All)</option>
@@ -66,24 +69,27 @@
                 <option value="Wool">Wool</option>
             </select>
 
-            <p>Sort: </p>
+            <div id="sortOptions" class="sort-section">
+                <p>Sort:</p>
+                <div class="sort-grid">
+                  <label><input type="radio" name="sort" value="brand" checked> Brand</label>
+                  <label><input type="radio" name="sort" value="color"> Color</label>
+                  <label><input type="radio" name="sort" value="weight"> Weight</label>
+                  <label><input type="radio" name="sort" value="material"> Material</label>
+                </div>
+              </div>
+              
         </aside>
 
         <div class="yarn-grid"></div>
     </section>
 
-    <!-- Modal Background Overlay -->
     <div id="modalOverlay"></div>
-
-    <!-- Modal Container -->
     <div id="yarnModal">
         <button class="close-button">&times;</button>
         <div id="modalDetails"></div>
     </div>
     </div>
-
-    <!-- Use async for scripts that don’t depend on other scripts or the DOM  -->
-    <!-- Use defer for scripts that rely on the DOM or should execute in order -->
     <script src="script.js" defer></script>
   </body>
 </html>
